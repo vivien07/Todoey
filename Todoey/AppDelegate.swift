@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Todoey
-//
-//  Created by Angela Yu on 16/11/2017.
-//  Copyright © 2017 Angela Yu. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
@@ -16,13 +8,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         return true
     }
 
 
     func applicationWillTerminate(_ application: UIApplication) {
-
         self.saveContext()
     }
     
@@ -38,11 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         return container
-    }()
+        
+    } ()
     
     // MARK: - Core Data Saving support
     
     func saveContext () {
+        
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -53,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        
     }
 
 
